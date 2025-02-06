@@ -1,0 +1,7 @@
+"0","add_alert(""t"")
+"
+"1","To display this alert in your document, copy and paste the following shortcode into your text editor:
+
+:::{#ale-t}]
+{{< alert 't' >}}
+:::"
