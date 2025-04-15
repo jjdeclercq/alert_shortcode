@@ -4,7 +4,7 @@ A framework for creating Quarto callouts using YAML. Additional inputs allow for
 
 ## Installing
 
-_TODO_: Replace the `<github-organization>` with your GitHub organization.
+In a terminal window, navigate to the working directory of the project for which you want to use the shortcode, then paste in this command:
 
 ```bash
 quarto add jjdeclercq/alert_shortcode
@@ -15,7 +15,19 @@ If you're using version control, you will want to check in this directory.
 
 ## Using
 
-_TODO_: Describe how to use your extension.
+YAML structure for shortcode arguments:
+
+- [`alert_name:`] Each alert must have a unique name   
+  - `title:` The title of the callout (optional)
+  - `type:` The standard callout types: `warning`, `tip`, `note`, `important`, `caution`
+  - `content:` The text to include in the callout
+  - `icon:` `true`/`false` - Include the callout icon (defaults to `true`)
+  - `collapse:` `true`/`false` - Whether of not the callout is collapsed (defaults to `false`)
+  - `date_created:` Date alert first created (Optional)
+  - `resolved:` `yes`/`no` - Whether or not the alert is resolved (defaults to `no`)
+  - `date_resolved:` Date alert resolved (Optional)
+  - `resolution:` A description of how the alert was resolved (Optional)
+  - `include_extras:` `yes`/`no` - Whether or not to inlcude alert metadata (resolution status, dates) in the callout (defaults to `no`)
 
 ## Example
 
