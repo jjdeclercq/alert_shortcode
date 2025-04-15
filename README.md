@@ -1,6 +1,6 @@
 # Alert Extension For Quarto
 
-_TODO_: Add a short description of your extension.
+A framework for creating Quarto callouts using YAML. Additional inputs allow for tracking and logging issues throughout the lifespan of the document. 
 
 ## Installing
 
