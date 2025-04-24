@@ -54,3 +54,5 @@ rsconnect/
 .Rproj.user/
 
 example_files/
+_extensions/
+presentation/
