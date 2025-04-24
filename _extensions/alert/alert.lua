@@ -73,33 +73,4 @@ return {
     -- Return the rendered callout via Quarto's Callout function
     return quarto.Callout(calloutDiv)
   end
-
-
-,
-
-
-
-  -- Alert summary function
-['alert_summary'] = function(args, kwargs, meta)
-  local alerts_list = meta["alerts_list"]
-  if not alerts_list then
-    return pandoc.Str("Error: alerts_list not found in metadata.")
-  end
-
-  local alertNames = {}
-
-  -- Extract alert names
-  for key, _ in pairs(alerts_list) do
-    table.insert(alertNames, key)
-  end
-
-  -- Sort alert names based on the number in their name
-  table.sort(alertNames, function(a, b)
-    local numA = tonumber(a:match("%d+")) or math.huge
-    local numB = tonumber(b:match("%d+")) or math.huge
-    return numA < numB
-  end)
-
-  return pandoc.Para({pandoc.Str(table.concat(alertNames, ", "))})
-end
 }
