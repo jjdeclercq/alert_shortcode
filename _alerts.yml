@@ -4,47 +4,45 @@ alerts_list:
     type: warning
     content: This is a critical alert.
     icon: false
-    collapse: yes
+    collapse: true
     date_created: '2023-04-01'
-    resolved: yes
-    date_resolved: '2023-04-05'
-    resolution: Issue fixed by updating the server.
-    include_extras: yes
+    resolved: false
+    include_extras: true
   test2:
     title: Important Notice 2
     type: warning
     content: This is a critical alert.
-    icon: yes
-    collapse: no
+    icon: true
+    collapse: false
     date_created: '2023-04-01'
-    resolved: yes
+    resolved: true
     date_resolved: '2023-04-05'
     resolution: Issue fixed by updating the server.
-    include_extras: yes
+    include_extras: true
   test3:
     title: TIP
     type: tip
     content: Just the tip.
-    collapse: yes
-    resolved: yes
+    collapse: true
+    resolved: true
   newa:
     title: new
     type: tip
     content: something
-    icon: yes
-    collapse: no
+    icon: true
+    collapse: false
     date_created: ''
-    resolved: yes
+    resolved: true
     date_resolved: ''
     resolution: ''
   alert005:
     title: important alert
     type: important
     content: 'This is very important'
-    icon: yes
-    collapse: no
+    icon: true
+    collapse: false
     date_created: ''
-    resolved: no
+    resolved: false
     date_resolved: ''
     resolution: ''
 
