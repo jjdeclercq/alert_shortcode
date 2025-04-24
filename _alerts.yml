@@ -3,8 +3,8 @@ alerts_list:
     title: Important Notice
     type: warning
     content: This is a critical alert.
-    icon: yes
-    collapse: no
+    icon: false
+    collapse: yes
     date_created: '2023-04-01'
     resolved: yes
     date_resolved: '2023-04-05'

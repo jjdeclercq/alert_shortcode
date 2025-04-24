@@ -99,7 +99,8 @@ devtools::source_url("https://raw.githubusercontent.com/jjdeclercq/VUMisC/refs/h
 
 
 ```{r}
-add_alert <- function(alert_name = NULL) {
+
+add_alert <- function(yaml_file = "_alerts.yml", alert_name = NULL) {
   # Load required libraries
   if (!requireNamespace("yaml", quietly = TRUE)) {
     stop("Package 'yaml' is required but not installed.")
@@ -108,8 +109,6 @@ add_alert <- function(alert_name = NULL) {
     stop("Package 'rstudioapi' is required but not installed.")
   }
   
-  yaml_file <- "_alerts.yml"
-  
   # Default template for an alert (all values blank or set to default)
   default_alert <- list(
     title = "",
@@ -117,7 +116,7 @@ add_alert <- function(alert_name = NULL) {
     content = "",
     icon = TRUE,
     collapse = FALSE,
-    date_created = Sys.Date(),
+    date_created = as.character(Sys.Date()),
     resolved = FALSE,
     date_resolved = "",
     resolution = ""
@@ -161,10 +160,10 @@ add_alert <- function(alert_name = NULL) {
   } else {
     message("RStudio API not available; please open ", yaml_file, " manually.")
   }
- 
   
-cat(paste0("To display this alert in your document, copy and paste the following shortcode into your text editor:\n\n::: {#ale-",new_alert_name,"}\n{{< alert '", new_alert_name, "' >}}\n:::"))
-
+  
+  cat(paste0("To display this alert in your document, copy and paste the following shortcode into your text editor:\n\n::: {#ale-",new_alert_name,"}\n{{< alert '", new_alert_name, "' >}}\n:::"))
+  
 }
 
 # add_alert("t")
