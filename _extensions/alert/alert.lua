@@ -15,27 +15,26 @@ return {
     end
 
     -- Basic alert fields
-    local title   = pandoc.utils.stringify(alertData["title"] or "Untitled")
-    local type    = pandoc.utils.stringify(alertData["type"] or "note")
-    local content = pandoc.utils.stringify(alertData["content"] or "No content provided.")
-    local showIcon     = alertData["icon"] ~= false         -- defaults to true
-    local collapsible  = alertData["collapse"] == true        -- defaults to false
+    local title        = pandoc.utils.stringify(alertData["title"] or "Untitled")
+    local type         = pandoc.utils.stringify(alertData["type"] or "note")
+    local content      = pandoc.utils.stringify(alertData["content"] or "No content provided.")
+    local showIcon     = alertData["icon"] ~= false         -- icon defaults to true
+    local collapsible  = alertData["collapse"] == true      -- collapse defaults to false
 
     -- New extra fields
     local date_created  = pandoc.utils.stringify(alertData["date_created"] or "")
-    local resolved      = pandoc.utils.stringify(alertData["resolved"] or false)
+    local resolved      = alertData["resolved"] == true     -- resolved must be true boolean
     local date_resolved = pandoc.utils.stringify(alertData["date_resolved"] or "")
     local resolution    = pandoc.utils.stringify(alertData["resolution"] or "")
-    
+    local include_extras = alertData["include_extras"] == true -- include_extras must be true boolean
+
     -- Build extra info (each item will be its own paragraph)
-    local include_extras = pandoc.utils.stringify(alertData["include_extras"] or false)
-    
     local extra_info = {}
-    if include_extras:lower() == "yes" then
+    if include_extras then
       if date_created ~= "" then
         table.insert(extra_info, "Date Created: " .. date_created)
       end
-      if resolved:lower() == "yes" then
+      if resolved then
         table.insert(extra_info, "Resolved: Yes")
         if date_resolved ~= "" then
           table.insert(extra_info, "Date Resolved: " .. date_resolved)
