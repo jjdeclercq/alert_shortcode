@@ -33,3 +33,6 @@ YAML structure for shortcode arguments:
 
 Here is the source code for a minimal example: [example.qmd](example.qmd). You will also need to copy [_alerts.yml](_alerts.yml) to your working directory.
 
+## More in-depth tutorial
+
+[Alert shortcode presentation](https://jjdeclercq.github.io/alert_shortcode/shortcode_presentation.html)
