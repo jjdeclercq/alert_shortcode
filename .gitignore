@@ -56,3 +56,5 @@ rsconnect/
 example_files/
 _extensions/
 presentation/
+
+!shortcode_presentation.html
